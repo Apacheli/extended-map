@@ -20,11 +20,9 @@
   },
   "homepage": "https://github.com/Apacheli/extended-map#readme",
   "type": "module",
-  "dependencies": {
-    "@apacheli/tsconfig": "github:apacheli/tsconfig"
-  },
   "devDependencies": {
     "@apacheli/eslint-config-ts": "github:apacheli/eslint-config-ts",
+    "@apacheli/tsconfig": "github:apacheli/tsconfig",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "eslint": "^7.8.0",
