@@ -71,7 +71,7 @@ export default class ExtendedMap<K, V> extends Map<K, V> {
    * @arg func A function
    * @arg initialValue Initial value
    */
-  reduce<U>(func: (a: U, b: V) => U, initialValue?: U): U {
+  reduce<U = V>(func: (a: U, b: V) => U, initialValue?: U): U {
     const items = this.values();
     let result = initialValue ?? items.next().value;
     for (const item of items) {
