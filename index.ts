@@ -73,7 +73,7 @@ export default class ExtendedMap<K, V> extends Map<K, V> {
    */
   reduce(func: (accumulator: V, item: V) => V): V;
   reduce<R>(func: (accumulator: R, item: V) => R, initialValue: R): R;
-  reduce(func: (accumulator: V, item: V) => V, initialValue?: V): V {
+  reduce(func: (accumulator: V, item: V) => V, initialValue?: V) {
     const items = this.values();
     let result;
     if (initialValue !== undefined) {
