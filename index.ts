@@ -81,12 +81,10 @@ export default class ExtendedMap<K, V> extends Map<K, V> {
     }
     else {
       const first = items.next();
-      if (!first.done) {
-        result = first.value;
+      if (first.done) {
+        throw new Error('Bad reduce call');
       }
-      else {
-        throw new TypeError('Bad reduce call');
-      }
+      result = first.value;
     }
     for (const item of items) {
       result = func(result, item);
