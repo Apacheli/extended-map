@@ -63,7 +63,8 @@ export default class ExtendedMap<K, V> extends Map<K, V> {
     for (let i = 0; i < random; i++) {
       items.next();
     }
-    return items.next().value;
+    const result = items.next();
+    return result.done ? undefined : result.value;
   }
 
   /**
