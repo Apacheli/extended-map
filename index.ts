@@ -64,7 +64,9 @@ export default class ExtendedMap<K, V> extends Map<K, V> {
       items.next();
     }
     const result = items.next();
-    return result.done ? undefined : result.value;
+    if (!result.done) {
+      return result.value;
+    }
   }
 
   /**
@@ -76,11 +78,8 @@ export default class ExtendedMap<K, V> extends Map<K, V> {
   reduce<R>(func: (accumulator: R, item: V) => R, initialValue: R): R;
   reduce(func: (accumulator: V, item: V) => V, initialValue?: V) {
     const items = this.values();
-    let result;
-    if (initialValue !== undefined) {
-      result = initialValue;
-    }
-    else {
+    let result = initialValue;
+    if (result === undefined) {
       const first = items.next();
       if (first.done) {
         throw new Error('Bad reduce call');
