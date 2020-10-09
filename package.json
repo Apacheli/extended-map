@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "A map with more methods",
   "main": "index.js",
+  "files": [
+    "index.d.ts",
+    "index.js"
+  ],
   "scripts": {
     "build": "tsc",
     "lint": "eslint index.ts || true",
